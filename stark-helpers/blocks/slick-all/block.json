@@ -1,0 +1,15 @@
+{
+    "name": "acf/slick-all",
+    "title": "Slick All",
+    "description": "Slick All",
+    "style": [ "file:./slick-all.css" ],
+    "script": [],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["stark", "slider", "slick"],
+    "acf": {
+        "mode": "auto",
+        "renderTemplate": "slick-all.php"
+    },
+    "align": "full"
+}

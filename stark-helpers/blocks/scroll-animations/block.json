@@ -1,0 +1,15 @@
+{
+    "name": "acf/scroll-animations",
+    "title": "Scroll Animations",
+    "description": "Scroll Animations",
+    "style": [],
+    "script": [],
+    "category": "formatting",
+    "icon": "admin-comments",
+    "keywords": ["stark", "scroll", "animations"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "scroll-animations.php"
+    },
+    "align": "full"
+}
