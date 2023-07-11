@@ -2,8 +2,8 @@
 /*
  * Plugin Name: Stark Helpers
  * Plugin URI: https://julianstark.de/
- * Description: Starke Gutenberg Blocks.
- * Version: 2023.06.22.2
+ * Description: Stark Helpers - Gutenberg Blocks.
+ * Version: 2023.06.28.1
  * Author: Julian Stark
  */
 
@@ -41,6 +41,35 @@ function stark_helpers_enqueue_acf_block_script() {
     }
 }
 add_action('enqueue_block_assets', 'stark_helpers_enqueue_acf_block_script');
+
+/*
+ * Has Block inklusive GeneratePress Elements
+ */
+function stark_has_block($block_name, $post_id = null) {
+
+    if (!$post_id) {
+        $post_id = get_the_ID();
+    }
+
+    if (has_block($block_name, $post_id)) {
+        return true;
+    }
+
+    global $generate_elements;
+
+    if (!$generate_elements || empty($generate_elements)) {
+        return false;
+    }
+
+    foreach ((array) $generate_elements as $key => $data) {
+        if ($data['is_block_element'] && has_block($block_name, $data['id'])) {
+            return true;
+        }
+    }
+
+    return false;
+
+}
 
 /*
  * ACFs for Slick All
