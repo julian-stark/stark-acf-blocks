@@ -3,7 +3,7 @@
  * Plugin Name: Stark Helpers
  * Plugin URI: https://julianstark.de/
  * Description: Stark Helpers - Gutenberg Blocks.
- * Version: 2023.06.28.1
+ * Version: 2023.08.02.1
  * Author: Julian Stark
  */
 
@@ -28,12 +28,12 @@ function stark_helpers_register_block_script() {
 function stark_helpers_enqueue_acf_block_script() {
     if (is_singular()) {
         // Check if the current post/page contains the ACF block
-        if (!is_admin() && has_block('acf/scroll-animations')) {
+        if (!is_admin() && stark_has_block('acf/scroll-animations')) {
             wp_enqueue_script('sal-js', plugin_dir_url(__FILE__) . 'ressources/sal/sal.js');
             //wp_enqueue_script('sal-init-js', plugin_dir_url(__FILE__) . 'blocks/scroll-animations/scroll-animations.js', ['sal-js']);
             wp_enqueue_style('sal-css', plugin_dir_url(__FILE__) . 'ressources/sal/sal.css', array(), '1.0', 'all');
         }
-        if (!is_admin() && has_block('acf/slick-all')) {
+        if (!is_admin() && stark_has_block('acf/slick-all')) {
             wp_enqueue_script('slick-js', plugin_dir_url(__FILE__) . 'ressources/slick/slick.min.js', ['jquery']);
             wp_enqueue_style('slick-css', plugin_dir_url(__FILE__) . 'ressources/slick/slick.css');
             wp_enqueue_style('slick-theme-css', plugin_dir_url(__FILE__) . 'ressources/slick/slick-theme.css');
