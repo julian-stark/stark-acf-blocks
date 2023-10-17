@@ -21,13 +21,31 @@ if (is_admin()) {
     <?php if ($css): ?>
     <style>
     <?php echo $css;
-?>
+    ?>
     </style>
     <?php endif;?>
 
     <script>
     jQuery(document).ready(function($) {
-        $("<?php echo $selector; ?>").slick(
+
+        // Only run if there are multiple children
+        function hasMultipleChildren(parentSelector) {
+            const $parent = $(parentSelector);
+            if ($parent.length) {
+                const childrenCount = $parent.children().length;
+                return childrenCount >= 2;
+            }
+            return false;
+        }
+
+        const sliderSelector = "<?php echo $selector; ?>";
+        const result = hasMultipleChildren(sliderSelector);
+
+        if (result) {} else {
+            return;
+        }
+
+        $(sliderSelector).slick(
             <?php if ($settings): ?> <?php echo $settings; ?> <?php endif;?>
         );
     });

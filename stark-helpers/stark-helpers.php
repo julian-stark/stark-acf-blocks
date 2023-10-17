@@ -3,7 +3,7 @@
  * Plugin Name: Stark Helpers
  * Plugin URI: https://julianstark.de/
  * Description: Stark Helpers - Gutenberg Blocks.
- * Version: 2023.08.02.1
+ * Version: 2023.10.17.2
  * Author: Julian Stark
  */
 
