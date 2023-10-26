@@ -21,7 +21,7 @@ if (is_admin()) {
     <?php if ($css): ?>
     <style>
     <?php echo $css;
-    ?>
+?>
     </style>
     <?php endif;?>
 
